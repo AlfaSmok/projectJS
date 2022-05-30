@@ -11,8 +11,8 @@ console.log(typeof adaptive);
 
 console.log(screens.length);
 
-console.log("Стоимость верстки экранов " + screenPrice + " рублей \nСтоимость разработки сайта " + fullPrice + " рублей");
-
+console.log("Стоимость верстки экранов " + screenPrice + " рублей");
+console.log("Стоимость разработки сайта " + fullPrice + " рублей");
 console.log(screens.toLowerCase().split(", "));
 
-console.log("Процент отката посреднику за работу " +(fullPrice * (rollback/100)));
+console.log("Процент отката посреднику за работу " + (fullPrice * (rollback/100)));
