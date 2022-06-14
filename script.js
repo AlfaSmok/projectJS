@@ -11,8 +11,6 @@ let fullPrice;
 let servicePercentPrice;
 let service1;
 let service2;
-let servicePrice1;
-let servicePrice2;
 
 
 const isNumber = function(num) {
@@ -37,20 +35,18 @@ const getAllServicePrice = function() {
   let sum = 0;
   
   for (let i = 0; i < 2; i++) {
+    let untilsum;
     if (i === 0) {
       service1 = prompt('Какой дополнительный тип услуги нужен?');
-      do {
-        servicePrice1 = prompt('Сколько это будет стоить?');
-      } while (!isNumber(servicePrice1));
     } else if (i === 1) {
       service2 = prompt('Какой дополнительный тип услуги нужен?');
-      do {
-        servicePrice2 = prompt('Сколько это будет стоить?');
-      } while (!isNumber(servicePrice2));
     }
-    sum = Number(servicePrice1) + Number(servicePrice2);
-  }
 
+    do {
+      untilsum = prompt('Сколько это будет стоить?');
+    } while (!isNumber(untilsum));
+    sum += +untilsum;
+  }
   return sum;
 };
 
