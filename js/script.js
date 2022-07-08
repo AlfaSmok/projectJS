@@ -25,7 +25,6 @@ console.log(totalScreen);
 console.log(totalAddition);
 console.log(totalAllPrice);
 console.log(totalAllPriceRollback);
-
 console.log(screenBlock);
 
 // const appData = {
