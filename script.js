@@ -9,9 +9,6 @@ const googleBanner = document.querySelector('.adv');
 const ulBooksLi = document.querySelectorAll('li');
 const ulBooks = document.querySelectorAll('ul');
 
-console.log(book);
-console.dir(ulBooks);
-console.dir(ulBooksLi);
 
 book[0].before(book[1]);
 book[2].remove();
