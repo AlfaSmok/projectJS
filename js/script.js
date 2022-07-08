@@ -1,27 +1,30 @@
 'use strict';
 
-const projectName = document.getElementsByTagName('h1')[0].textContent;
+const projectName = document.getElementsByTagName('h1')[0];
 const button = document.getElementsByClassName('handler_btn');
+let [buttonCalculate, buttonClear] = button;
 const buttonPlus = document.querySelector('.screen-btn');
 const itemsPercent = document.querySelectorAll('.other-items.percent');
 const itemsNumber = document.querySelectorAll('.other-items.number');
-const rollbackInput  = document.querySelector('.rollback > .main-controls__range > [type="range"]');
-const rollbackSpan  = document.querySelector('.rollback > .main-controls__range > .range-value');
+const rollbackInput  = document.querySelector('.rollback [type="range"]');
+const rollbackSpan  = document.querySelector('.rollback .range-value');
 const totalInput = document.getElementsByClassName('total-input');
+let [totalPrice, totalScreen, totalAddition, totalAllPrice, totalAllPriceRollback] = totalInput;
 let screenBlock = document.querySelectorAll('.screen');
 
 console.log(projectName);
-console.log(button[0]);
-console.log(button[1]);
+console.log(buttonCalculate);
+console.log(buttonClear);
 console.log(buttonPlus);
 console.log(itemsPercent);
 console.log(itemsNumber);
 console.log(rollbackInput);
 console.log(rollbackSpan);
-
-for (let i in totalInput) {
-  console.log(totalInput[i]);
-}
+console.log(totalPrice);
+console.log(totalScreen);
+console.log(totalAddition);
+console.log(totalAllPrice);
+console.log(totalAllPriceRollback);
 
 console.log(screenBlock);
 
