@@ -15,7 +15,7 @@ const totalInput = document.getElementsByClassName('total-input');
 let [totalPrice, totalScreen, totalAddition, totalAllPrice, totalAllPriceRollback] = totalInput;
 
 let screens = document.querySelectorAll('.screen');
-
+const cloneClearScreen = screens[0].cloneNode(true);
 
 const appData = {
   title: '',
@@ -31,6 +31,7 @@ const appData = {
   servicesPercent: {},
   servicesNumber: {},
   isError: false,
+  
   
   init: function() {
     appData.addTitle();
@@ -131,8 +132,11 @@ const appData = {
     });
   },
   addScreenBlock: function() {
-    const cloneScreen = screens[0].cloneNode(true);
+    screens = document.querySelectorAll('.screen');
+    const cloneScreen = cloneClearScreen.cloneNode(true);
     screens[screens.length - 1].after(cloneScreen);
+    console.log(document.querySelectorAll('.screen'));
+
   },
   addPrices: function() {
     appData.screenPrice = appData.screens.reduce(function(sum, price) {
