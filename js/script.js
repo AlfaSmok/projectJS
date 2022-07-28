@@ -36,9 +36,9 @@ const appData = {
   init: function() {
     this.addTitle();
     rollbackInput.addEventListener('input', this.addChangeRollback);
-    buttonCalculate.addEventListener('click', this.getCheckValue);
+    buttonCalculate.addEventListener('click', this.getCheckValue.bind(this));
     buttonPlus.addEventListener('click', this.addScreenBlock);
-    buttonClear.addEventListener('click', this.getReset);
+    buttonClear.addEventListener('click', this.reset.bind(this));
   },
 
   start: function() {
@@ -54,7 +54,6 @@ const appData = {
     document.title = projectName.textContent;
   },
   getCheckValue: function() {
-    
     this.isError = false;
     screens = document.querySelectorAll('.screen');
     
@@ -69,7 +68,7 @@ const appData = {
 
     });
     if (!this.isError) {
-      appData.start();
+      this.start();
       buttonCalculate.style.display = 'none';
       buttonClear.style.display = 'block';
       buttonPlus.setAttribute('disabled', 'disabled');
@@ -166,10 +165,6 @@ const appData = {
     this.servicePercentPrice =  Math.ceil(this.fullPrice - (this.fullPrice * (this.rollback/100)));
   },
 
-  getReset: function() {
-    appData.reset();
-  },
-
   reset: function() {
     buttonCalculate.style.display = 'block';
     buttonClear.style.display = 'none';
@@ -182,7 +177,6 @@ const appData = {
   },
 
   getClearScreens: function() {
-    screens = document.querySelectorAll('.screen');
     screens.forEach((screen, index) => {
       const select = screen.querySelector('select');
       const input = screen.querySelector('input');
